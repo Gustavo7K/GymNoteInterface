@@ -30,4 +30,6 @@ function limparCampos(){
 formulario.addEventListener ('submit', function(event) {
     event.preventDefault();
     cadastrar();
+    limparCampos();
+    alert("Cadastro realizado com sucesso!");
 });
