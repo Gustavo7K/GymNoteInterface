@@ -3,25 +3,26 @@ const Inome = document.querySelector("[name='nome']");
 const Iexercicios = document.querySelector("[name='exercicios']");
 const Iobs = document.querySelector("[name='obs']");
 
-function cadastrar(){
-    fetch("http://localhost:8080/notes/create", {
-        headers:{
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        method: "POST",
-        body: JSON.stringify({
-        weekdayMuscle: Inome.value,
-        exercises: Iexercicios.value,
-        observations: Iobs.value
-})
-    })
-    .then(res => res.json())
-    .then(data => {
+async function cadastrar() {
+    try {
+        const response = await fetch("http://localhost:8080/notes/create", {
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify({
+                weekdayMuscle: Inome.value,
+                exercises: Iexercicios.value,
+                observations: Iobs.value
+            })
+        });
+        const data = await response.json();
         alert("Cadastro realizado com sucesso!");
         window.location.href = "listagem.html";
-    })
-    .catch(err => console.log(err));
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 function limparCampos(){
