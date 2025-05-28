@@ -4,22 +4,25 @@ const Iexercicios = document.querySelector("[name='exercicios']");
 const Iobs = document.querySelector("[name='obs']");
 
 function cadastrar(){
-    fetch("http//:localhost:8080/cadastrar", 
-        {
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify({
-                nome: Inome.value,
-                exercicios: Iexercicios.value,
-                obs: Iobs.value
-            })
-        })
-        .then(function (res){console.log(res)})
-        .catch(function (res){console.log(res)})
-}; 
+    fetch("http://localhost:8080/notes/create", {
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({
+        weekdayMuscle: Inome.value,
+        exercises: Iexercicios.value,
+        observations: Iobs.value
+})
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert("Cadastro realizado com sucesso!");
+        window.location.href = "listagem.html";
+    })
+    .catch(err => console.log(err));
+}
 
 function limparCampos(){
     Inome.value = "";
@@ -31,5 +34,4 @@ formulario.addEventListener ('submit', function(event) {
     event.preventDefault();
     cadastrar();
     limparCampos();
-    alert("Cadastro realizado com sucesso!");
 });
