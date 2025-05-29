@@ -3,10 +3,11 @@ body {
     background: #f2f2f2;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .main {
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -19,7 +20,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     width: 100%;
-    max-width: 600px;
+    max-width: 850px;
 }
 
 header {
@@ -83,6 +84,10 @@ header nav a:hover {
 
 .treino-lista td:last-child {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 0.7rem; 
+    align-items: center;
 }
 
 .botao-estilizado, .treino-lista .acao-btn {
@@ -93,7 +98,7 @@ header nav a:hover {
     padding: 0.4rem 1rem;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: 0.2s;
     margin: 0 0.2rem;
 }
 
@@ -101,13 +106,29 @@ header nav a:hover {
     background: #565fc8;
 }
 
+.treino-lista input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #f9f9ff;
+    max-width: 320px; 
+}
+
 /* Responsividade */
 @media (max-width: 700px) {
     .training {
-        padding: 1rem;
-        max-width: 98vw;
+        padding: 0.5rem;
+        max-width: 100vw;
     }
     .treino-lista table, .treino-lista th, .treino-lista td {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
+        padding: 0.5rem 0.4rem;
+    }
+    .treino-lista input[type="text"] {
+        font-size: 0.92rem;
+        max-width: 100px;
     }
 }
