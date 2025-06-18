@@ -50,3 +50,12 @@ Este repositório contém o **front-end** da aplicação `Gym Note`, responsáve
 ## 🤝 Repositório complementar (Back-end)
 Esta aplicação se comunica com a API desenvolvida em Spring Boot.
 - ➡️ [Acesse aqui o repositório do back-end](https://github.com/Gustavo7K/GymNoteAPI)
+
+## 💭Rascunhos e Planejamento
+A quem interessar deixo abaixo os rascunhos de como eu projetei e um pouco do que eu pensei como seria essa aplicação antes de começar a codar.
+
+<p align="center">
+  <img src="img/projetoRascunho-2024-11-25-2015.excalidraw.png" alt="Rascunho e Projeto" width="600" />
+</p>
+
+- Tudo isso foi feito no **excalidraw**
